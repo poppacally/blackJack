@@ -1,0 +1,13 @@
+card values:
+
+2 - 10 have face value
+
+jack, king and queen = 10
+
+ace = 1 or 11, unless this means the player will go bust then it's always valued at 1
+
+after first deal players can hit, stand
+
+hit - give another card to player
+
+stand - stay where they are no new cards
