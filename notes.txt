@@ -1,13 +1,31 @@
 card values:
-
-2 - 10 have face value
-
-jack, king and queen = 10
-
-ace = 1 or 11, unless this means the player will go bust then it's always valued at 1
+-2 - 10 have face value
+-jack, king and queen = 10
+-ace = 1 or 11, unless this means the player will go bust then it's always valued at 1
 
 after first deal players can hit, stand
 
 hit - give another card to player
-
 stand - stay where they are no new cards
+
+GENERAL PATH:
+
+Place bets
+-Player has a bank
+-Player is able to bet using the value of their hand on each hands
+Insurance:
+-No idea yet tbh
+
+Card deal:
+Player gets 2 cards
+Dealer gets 2 cards one shown one hidden
+  -Player can hit or stick
+  -Dealer gets cards dealt until either 21 or bust (up to 3 cards)
+
+Split
+If a player is dealt 2 cards of the same value they're able to spit them into 2 hands
+
+=TASKS=
+-Create dealer hand and hit or stick decision system
+-Create bank and betting system
+-Create spilt system

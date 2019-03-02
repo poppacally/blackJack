@@ -1,8 +1,11 @@
 //define player and card array
 var player;
+var playerRunningTotal;
+var dealer;
+var dealerRunningTotal;
 var cards = ["Ace", "King", "Queen", "Jack", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-var runningTotal;
 var newCard;
+var readline = require('readline-sync');
 
 //create the card generator function includes the checks for face cards and aces
 function cardGenerator(newCard) {
@@ -25,36 +28,60 @@ function cardGenerator(newCard) {
     return newCard;
 }
 
-//ask for players name and put it into "player"
-var readline = require('readline-sync');
+//ask for players name and put it into "player" (moving to greeting function)
 var player = readline.question("Please enter your player name: ");
 
 //generate first and second card
-var firstCard = cardGenerator(newCard);
-var secondCard = cardGenerator(newCard);
+var playerFirstCard = cardGenerator(newCard);
+var playerSecondCard = cardGenerator(newCard);
 
 //reassign running total after first set have been generated
-runningTotal = firstCard + secondCard;
+playerRunningTotal = playerFirstCard + playerSecondCard;
 
-console.log("Hi " + player + ", your first cards are " + firstCard + " & " + secondCard + " A total of: " + runningTotal);
+//generate dealers cards
+var dealerFirstCard = cardGenerator(newCard);
+var dealerSecondCard = cardGenerator(newCard);
 
-if (runningTotal > 21) {
+//reassign running total after first set have been generated
+dealerRunningTotal = dealerFirstCard + dealerSecondCard;
+console.log("TEST: Dealer has " + dealerFirstCard + " & " + dealerSecondCard + " Dealer total is " + dealerRunningTotal)
+
+//output dealer cards - only show 2nd card
+console.log("The dealer has dealt he has one hidden card and " + dealerSecondCard)
+
+//output first and second card to player (moving to greeting function)
+console.log("Hi " + player + ", your first cards are " + playerFirstCard + " & " + playerSecondCard);
+
+if (playerRunningTotal > 21) {
     console.log("You've gone bust!")
 }else {
-    var playerChoice = readline.question("Your total is " + runningTotal + ". Would you like to hit(h) or stand(s) ?")
+    var playerChoice = readline.question("Your total is " + playerRunningTotal + ". Would you like to hit(h) or stand(s) ?")
     if (playerChoice == "h") {
         console.log("You hit");
         //generate new card and add to runningTotal
         var playerChoiceNewCard = cardGenerator(newCard);
         console.log("Your have been dealt " + playerChoiceNewCard);
-        runningTotal += parseInt(playerChoiceNewCard);
-        console.log(runningTotal);
-        if (runningTotal < 21) {
-            console.log("Your new total is " + runningTotal);
+        playerRunningTotal += parseInt(playerChoiceNewCard);
+        console.log(playerRunningTotal);
+        if (playerRunningTotal < 21) {
+            console.log("Your new total is " + playerRunningTotal);
         }else{
             console.log("You've gone bust!")
         }
     }if (playerChoice == "s") {
-        console.log("You stood your total is " + runningTotal);
+        console.log("You stood your total is " + playerRunningTotal);
     }
+}
+
+var playerActive;
+
+if (playerRunningTotal < 21) {
+    playerActive = true;
+}else{
+    playerActive = false;
+}
+
+while (playerActive == true) {
+    
+    
 }
