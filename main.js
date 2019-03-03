@@ -15,7 +15,6 @@ function playerCardGenerator(newCard) {
     var newCard = cards[Math.floor(Math.random() * cards.length)];
 
     //check if a face value and assign a value
-
     if (newCard == "King") {
         newCard = 10;
     }
@@ -100,6 +99,27 @@ if (dealerRunningTotal < 21) {
 }
 
 while (playerActive == true) {
+    //check for card duplicates and offer a spilt
+    if (playerFirstCard == playerSecondCard) {
+        var playerSplit = readline.question("You got a " + playerFirstCard + "&" + playerSecondCard + ". Would you like to split your hand? Yes(y) or No(n)");
+        if (playerSplit == "y") {
+            //spilt cards into hands
+
+                //hand one
+                    //deal card
+
+                //hand two
+                    //deal card
+        }
+
+        if (playerSplit == "n") {
+            //continue with current cards
+            console.log("TEST: PLAYER DID NO SPLIT");
+            break
+        }
+
+    }
+
     //player hit or stand
     var playerChoice = readline.question("Your total is " + playerRunningTotal + ". Would you like to hit(h) or stand(s)?")
 
@@ -142,7 +162,12 @@ while (playerActive == true) {
 //use dealer active 
 
 while (dealerActive = true) {
-    //whole new fucking system to know when the dealer needs to hit or stand and I have no idea how to create that rn (GOTO DEALER TURN YANO!)    
+    //whole new fucking system to know when the dealer needs to hit or stand and I have no idea how to create that rn
+
+    //because errors
+        //because errors
+        var dealerInput = readline.question("YOU'RE IN THE DEALERS TURN EVERYTHING IS BROKEN MAYBE");
+        if (dealerInput == "exit") {
+            break
+        }
 }
-
-
