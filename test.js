@@ -4,6 +4,7 @@ var playerRunningTotal;
 var playerActive;
 var dealer;
 var dealerRunningTotal;
+var dealerActive;
 var cards = ["Ace", "King", "Queen", "Jack", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 var newCard;
 var readline = require('readline-sync');
@@ -92,6 +93,12 @@ if (playerRunningTotal < 21) {
     playerActive = false;
 }
 
+if (dealerRunningTotal < 21) {
+    dealerActive = true;
+} else {
+    dealerActive = false;
+}
+
 while (playerActive == true) {
     //player hit or stand
     var playerChoice = readline.question("Your total is " + playerRunningTotal + ". Would you like to hit(h) or stand(s)?")
@@ -131,7 +138,11 @@ while (playerActive == true) {
     }
 }
 
-
 //check dealer score for bust
+//use dealer active 
 
-//whole new fucking system to know when the dealer needs to hit or stand and I have no idea how to create that rn (GOTO DEALER TURN YANO!)
+while (dealerActive = true) {
+    //whole new fucking system to know when the dealer needs to hit or stand and I have no idea how to create that rn (GOTO DEALER TURN YANO!)    
+}
+
+
