@@ -1,6 +1,7 @@
-//define player and card array
+//declarations
 var player;
 var playerRunningTotal;
+var playerActive;
 var dealer;
 var dealerRunningTotal;
 var cards = ["Ace", "King", "Queen", "Jack", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -67,21 +68,10 @@ if (playerRunningTotal > 21) {
             console.log("Your new total is " + playerRunningTotal);
         }else{
             console.log("You've gone bust!")
+            //goto dealers turn
         }
     }if (playerChoice == "s") {
         console.log("You stood your total is " + playerRunningTotal);
+        //goto dealers turn
     }
-}
-
-var playerActive;
-
-if (playerRunningTotal < 21) {
-    playerActive = true;
-}else{
-    playerActive = false;
-}
-
-while (playerActive == true) {
-    
-    
 }
