@@ -104,11 +104,22 @@ while (playerActive == true) {
         var playerSplit = readline.question("You got a " + playerFirstCard + "&" + playerSecondCard + ". Would you like to split your hand? Yes(y) or No(n)");
         if (playerSplit == "y") {
             //spilt cards into hands
-
                 //hand one
-                    //deal card
+                var playerHandOne;
+                var playerSplitCardOne = readline.question("You first hand has " + playerFirstCard + ". Would you like to hit(h) or spilt(s)")
+                if (playerSplitCardOne == "y") {
+                  //deal card
+                  playerSplitCardOne = playerCardGenerator(newCard);
+                  playerHandOne = playerSplitCardOne += playerFirstCard;
+                  console.log("You have been dealt " + playerSplitCardOne + ". First hand total is " + playerHandOne);
+                  //need to check for bust
+                } else {
+                  //goto split hand two
+                  console.log("First hand total is " + playerFirstCard);
+                }
 
                 //hand two
+                var playerHandTwo;
                     //deal card
         }
 
@@ -159,7 +170,7 @@ while (playerActive == true) {
 }
 
 //check dealer score for bust
-//use dealer active 
+//use dealer active
 
 while (dealerActive = true) {
     //whole new fucking system to know when the dealer needs to hit or stand and I have no idea how to create that rn
